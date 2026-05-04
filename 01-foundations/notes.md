@@ -102,6 +102,47 @@ $$\|\mathbf{x}\|_1 = \sum_{i=1}^{n} |x_i|$$
 - Weight decay / L2 regularization penalizes $\|W\|_2^2$.
 - Gradient clipping checks $\|\nabla\|_2$ and scales gradients down if it exceeds a threshold.
 
+### 1.7 Rank and Subspaces
+
+The **rank** of a matrix $A \in \mathbb{R}^{m \times n}$ is the number of linearly
+independent rows (or equivalently, columns). It tells you the effective
+dimensionality of the transformation that $A$ performs.
+
+- If $A$ is $m \times n$, then $\text{rank}(A) \leq \min(m, n)$.
+- A matrix with $\text{rank}(A) = \min(m, n)$ is called **full rank**. It loses no
+  information during the transformation.
+- A matrix with $\text{rank}(A) < \min(m, n)$ is **rank-deficient** -- it collapses
+  some dimensions, mapping distinct inputs to the same output.
+
+A **subspace** is a subset of $\mathbb{R}^n$ that is closed under addition and
+scalar multiplication. Important subspaces of a matrix $A$:
+
+- **Column space** (range): all possible outputs $\{A\mathbf{x} : \mathbf{x} \in \mathbb{R}^n\}$.
+  Its dimension equals $\text{rank}(A)$.
+- **Null space** (kernel): all inputs that map to zero $\{\mathbf{x} : A\mathbf{x} = \mathbf{0}\}$.
+  Inputs in the null space are "invisible" to the transformation.
+- The rank-nullity theorem: $\text{rank}(A) + \text{nullity}(A) = n$. Information
+  is either preserved (rank) or lost (nullity).
+
+**Why it matters in generative AI:**
+
+- **Low-rank approximations** are everywhere. LoRA (Low-Rank Adaptation) fine-tunes
+  large models by adding low-rank matrices $\Delta W = AB$ where
+  $A \in \mathbb{R}^{d \times r}$, $B \in \mathbb{R}^{r \times d}$, and $r \ll d$.
+  This works because weight updates during fine-tuning tend to lie in a low-rank
+  subspace -- you don't need all $d^2$ parameters, just $2dr$.
+- **Attention as projection:** Queries and keys are projected into a lower-dimensional
+  subspace ($d_k < d_{\text{model}}$). Multi-head attention uses *different* subspaces
+  per head, each capturing a different aspect of the relationship between tokens.
+- **Autoencoders:** The encoder maps data into a lower-dimensional latent subspace.
+  If the bottleneck has rank $r$, the autoencoder can only represent an $r$-dimensional
+  manifold of the data. A linear autoencoder with rank-$r$ bottleneck recovers exactly
+  the top-$r$ PCA components.
+- **Embeddings:** A vocabulary of $V$ tokens embedded into $\mathbb{R}^d$ uses a matrix
+  $W_e \in \mathbb{R}^{V \times d}$. If $d < V$ (which it always is), the embedding
+  lives in a $d$-dimensional subspace of $\mathbb{R}^V$ -- this is a form of
+  dimensionality reduction.
+
 ### Linear Layer Transformation
 
 The following diagram shows how a linear layer transforms an input vector through

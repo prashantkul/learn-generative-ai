@@ -10,17 +10,17 @@ Every module includes:
 
 ## Modules
 
-| # | Module | Notes | NotebookLM |
-|---|--------|-------|------------|
-| 01 | [Foundations](01-foundations/) | [notes.md](01-foundations/notes.md) | [Open in NotebookLM](https://notebooklm.google.com/notebook/47e52580-46c5-4c94-8b34-e060f56939b1) |
-| 02 | [Transformers](02-transformers/) | [notes.md](02-transformers/notes.md) | [Open in NotebookLM](https://notebooklm.google.com/notebook/63d1ee07-489a-4ce1-bd81-fc06b9350a68) |
-| 03 | [Autoencoders](03-autoencoders/) | [notes.md](03-autoencoders/notes.md) | [Open in NotebookLM](https://notebooklm.google.com/notebook/8d608b88-ffc1-408d-a78c-f4e7744d7b8f) |
-| 04 | [Diffusion Models](04-diffusion-models/) | [notes.md](04-diffusion-models/notes.md) | [Open in NotebookLM](https://notebooklm.google.com/notebook/b43bdea6-aee7-4a9e-83ca-7b98c8576e3c) |
-| 05 | [GANs](05-gans/) | [notes.md](05-gans/notes.md) | [Open in NotebookLM](https://notebooklm.google.com/notebook/bbde36f6-cf91-45d8-8bde-6c8b09f6a938) |
-| 06 | [Flow Models](06-flow-models/) | [notes.md](06-flow-models/notes.md) | [Open in NotebookLM](https://notebooklm.google.com/notebook/7db9a8ff-56e2-48f9-96b4-119a661b6a6d) |
-| 07 | [Autoregressive Models](07-autoregressive/) | [notes.md](07-autoregressive/notes.md) | [Open in NotebookLM](https://notebooklm.google.com/notebook/c3ce6a0c-3745-44bb-ac6d-6924da35c573) |
-| 08 | [Encoder-Decoder](08-encoder-decoder/) | [notes.md](08-encoder-decoder/notes.md) | [Open in NotebookLM](https://notebooklm.google.com/notebook/ab2fdf3a-334a-46d7-965e-4eadb65b233e) |
-| 09 | [Multimodal](09-multimodal/) | [notes.md](09-multimodal/notes.md) | [Open in NotebookLM](https://notebooklm.google.com/notebook/3ec8a8ec-483b-426b-bbf2-a4a9a3c1501a) |
+| # | Module | Notes | Notebook | GPU? | NotebookLM |
+|---|--------|-------|----------|------|------------|
+| 01 | [Foundations](01-foundations/) | [notes.md](01-foundations/notes.md) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/learn-generative-ai/blob/main/01-foundations/notebook.ipynb) | No | [NotebookLM](https://notebooklm.google.com/notebook/47e52580-46c5-4c94-8b34-e060f56939b1) |
+| 02 | [Transformers](02-transformers/) | [notes.md](02-transformers/notes.md) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/learn-generative-ai/blob/main/02-transformers/notebook.ipynb) | No | [NotebookLM](https://notebooklm.google.com/notebook/63d1ee07-489a-4ce1-bd81-fc06b9350a68) |
+| 03 | [Autoencoders](03-autoencoders/) | [notes.md](03-autoencoders/notes.md) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/learn-generative-ai/blob/main/03-autoencoders/notebook.ipynb) | Yes | [NotebookLM](https://notebooklm.google.com/notebook/8d608b88-ffc1-408d-a78c-f4e7744d7b8f) |
+| 04 | [Diffusion Models](04-diffusion-models/) | [notes.md](04-diffusion-models/notes.md) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/learn-generative-ai/blob/main/04-diffusion-models/notebook.ipynb) | Yes | [NotebookLM](https://notebooklm.google.com/notebook/b43bdea6-aee7-4a9e-83ca-7b98c8576e3c) |
+| 05 | [GANs](05-gans/) | [notes.md](05-gans/notes.md) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/learn-generative-ai/blob/main/05-gans/notebook.ipynb) | Yes | [NotebookLM](https://notebooklm.google.com/notebook/bbde36f6-cf91-45d8-8bde-6c8b09f6a938) |
+| 06 | [Flow Models](06-flow-models/) | [notes.md](06-flow-models/notes.md) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/learn-generative-ai/blob/main/06-flow-models/notebook.ipynb) | No | [NotebookLM](https://notebooklm.google.com/notebook/7db9a8ff-56e2-48f9-96b4-119a661b6a6d) |
+| 07 | [Autoregressive](07-autoregressive/) | [notes.md](07-autoregressive/notes.md) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/learn-generative-ai/blob/main/07-autoregressive/notebook.ipynb) | Yes | [NotebookLM](https://notebooklm.google.com/notebook/c3ce6a0c-3745-44bb-ac6d-6924da35c573) |
+| 08 | [Encoder-Decoder](08-encoder-decoder/) | [notes.md](08-encoder-decoder/notes.md) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/learn-generative-ai/blob/main/08-encoder-decoder/notebook.ipynb) | No | [NotebookLM](https://notebooklm.google.com/notebook/ab2fdf3a-334a-46d7-965e-4eadb65b233e) |
+| 09 | [Multimodal](09-multimodal/) | [notes.md](09-multimodal/notes.md) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/learn-generative-ai/blob/main/09-multimodal/notebook.ipynb) | Yes | [NotebookLM](https://notebooklm.google.com/notebook/3ec8a8ec-483b-426b-bbf2-a4a9a3c1501a) |
 
 Each NotebookLM notebook contains AI-generated artifacts: audio podcast, slide deck, infographic, and study report.
 
