@@ -21,6 +21,7 @@ Every module includes:
 | 07 | [Autoregressive](07-autoregressive/) | [notes.md](07-autoregressive/notes.md) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/learn-generative-ai/blob/main/07-autoregressive/notebook.ipynb) | Yes | [NotebookLM](https://notebooklm.google.com/notebook/c3ce6a0c-3745-44bb-ac6d-6924da35c573) |
 | 08 | [Encoder-Decoder](08-encoder-decoder/) | [notes.md](08-encoder-decoder/notes.md) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/learn-generative-ai/blob/main/08-encoder-decoder/notebook.ipynb) | No | [NotebookLM](https://notebooklm.google.com/notebook/ab2fdf3a-334a-46d7-965e-4eadb65b233e) |
 | 09 | [Multimodal](09-multimodal/) | [notes.md](09-multimodal/notes.md) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/learn-generative-ai/blob/main/09-multimodal/notebook.ipynb) | Yes | [NotebookLM](https://notebooklm.google.com/notebook/3ec8a8ec-483b-426b-bbf2-a4a9a3c1501a) |
+| 10 | [Mixture of Experts](10-mixture-of-experts/) | [notes.md](10-mixture-of-experts/notes.md) | [![Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/prashantkul/learn-generative-ai/blob/main/10-mixture-of-experts/notebook.ipynb) | No | [NotebookLM](https://notebooklm.google.com/notebook/aedf2bd4-85da-4c85-9062-8861a862414a) |
 
 Each NotebookLM notebook contains AI-generated artifacts: audio podcast, slide deck, infographic, and study report.
 
@@ -70,22 +71,25 @@ These four modules can be studied in any order, but the suggested sequence is:
 
 **Module 07 — Autoregressive Models** — GPT, LLMs, and the next-token prediction paradigm. This is where language modeling, RLHF, and scaling laws live. If your primary interest is LLMs, you could move this to Phase 1 right after Transformers.
 
-### Phase 3: Putting It All Together (Weeks 8-9)
+### Phase 3: Putting It All Together (Weeks 8-10)
 
 ```mermaid
 graph LR
     ED[08 Encoder-Decoder] --> MM[09 Multimodal]
+    AR[07 Autoregressive] --> MOE[10 MoE]
     classDef phase3 fill:#7B68AE,stroke:#5A4D82,color:#fff
-    class ED,MM phase3
+    class ED,MM,MOE phase3
 ```
 
 **Module 08 — Encoder-Decoder** — seq2seq, T5, BART, and cross-attention. This is the architecture behind translation, summarization, and conditional generation. It also sets up the cross-modal attention patterns used in multimodal models.
 
 **Module 09 — Multimodal** — the frontier. CLIP, text-to-image (DALL-E, Stable Diffusion), image-to-text (LLaVA), video generation (Sora), and the convergence thesis that all modalities are becoming tokens. This module ties everything together.
 
+**Module 10 — Mixture of Experts** — the scaling technique behind Mixtral, DeepSeek, and Grok. Conditional computation: route each token to a subset of expert sub-networks, decoupling model capacity from compute cost. Covers routing mechanisms, load balancing, and sparse vs dense tradeoffs.
+
 ### Alternative Paths
 
-**"I only care about LLMs"**: 01 → 02 → 07 → 08 → 09
+**"I only care about LLMs"**: 01 → 02 → 07 → 10 → 08 → 09
 
 **"I only care about image generation"**: 01 → 02 → 03 → 04 → 05 → 09
 
