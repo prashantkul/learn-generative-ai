@@ -1,0 +1,24 @@
+[project]
+name = "learn-generative-ai"
+version = "0.1.0"
+description = "Learn generative AI from first principles"
+requires-python = ">=3.11"
+dependencies = [
+  "torch>=2.2",
+  "torchvision>=0.17",
+  "numpy>=1.26",
+  "matplotlib>=3.8",
+  "jupyter>=1.0",
+  "ipywidgets>=8.1",
+  "tqdm>=4.66",
+  "einops>=0.7",
+  "datasets>=2.18",
+  "Pillow>=10.2",
+]
+
+[project.optional-dependencies]
+transformers = ["transformers>=4.38", "tokenizers>=0.15", "sentencepiece>=0.2"]
+diffusion = ["diffusers>=0.27", "accelerate>=0.27"]
+
+[tool.uv]
+dev-dependencies = ["ruff>=0.3"]
