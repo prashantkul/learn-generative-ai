@@ -237,7 +237,7 @@ expectation and variance mean.
 
 ### 2.3 Bayes' Theorem
 
-$$P(A|B) = \frac{P(B|A) \, P(A)}{P(B)}$$
+$$P(A \mid B) = \frac{P(B \mid A) \, P(A)}{P(B)}$$
 
 In words: the posterior is proportional to the likelihood times the prior.
 

@@ -122,11 +122,13 @@ determinant measures exactly how much $f$ locally stretches or compresses volume
 The Jacobian of $f : \mathbb{R}^d \to \mathbb{R}^d$ is the $d \times d$ matrix
 of all partial derivatives:
 
-$$J_f = \frac{\partial f}{\partial \mathbf{z}} = \begin{bmatrix}
+$$
+J_f = \frac{\partial f}{\partial \mathbf{z}} = \begin{bmatrix}
 \frac{\partial f_1}{\partial z_1} & \cdots & \frac{\partial f_1}{\partial z_d} \\
 \vdots & \ddots & \vdots \\
 \frac{\partial f_d}{\partial z_1} & \cdots & \frac{\partial f_d}{\partial z_d}
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 Computing $\det(J_f)$ for a dense $d \times d$ matrix costs $O(d^3)$, which is
 prohibitive when $d$ is the dimensionality of an image (e.g., $d = 3 \times 256 \times 256 = 196{,}608$).
@@ -211,10 +213,12 @@ cost as the forward pass.
 
 The Jacobian of the coupling layer has a block structure:
 
-$$J = \begin{bmatrix}
+$$
+J = \begin{bmatrix}
 \mathbf{I} & \mathbf{0} \\
 \frac{\partial \mathbf{x}_B}{\partial \mathbf{z}_A} & \text{diag}\bigl(\exp(s(\mathbf{z}_A))\bigr)
-\end{bmatrix}$$
+\end{bmatrix}
+$$
 
 This is a **lower triangular** matrix. The determinant of a triangular matrix is
 the product of its diagonal entries:

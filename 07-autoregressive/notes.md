@@ -725,7 +725,7 @@ large changes in a single step:
 
 $$\mathcal{L}_{\text{PPO}} = \min\left(r_t(\theta) \hat{A}_t, \; \text{clip}(r_t(\theta), 1-\epsilon, 1+\epsilon) \hat{A}_t\right)$$
 
-where $r_t(\theta) = \frac{\pi_\theta(a_t | s_t)}{\pi_{\text{old}}(a_t | s_t)}$
+where $r_t(\theta) = \frac{\pi_\theta(a_t \mid s_t)}{\pi_{\text{old}}(a_t \mid s_t)}$
 is the probability ratio and $\hat{A}_t$ is the advantage estimate.
 
 ### 7.6 DPO: Direct Preference Optimization
@@ -735,7 +735,7 @@ and RL training loop. It shows that the RLHF objective has a closed-form
 optimal policy, which can be used to derive a simple classification loss
 directly on preference pairs:
 
-$$\mathcal{L}_{\text{DPO}} = -\log \sigma\left(\beta \log \frac{\pi_\theta(y_w | x)}{\pi_{\text{ref}}(y_w | x)} - \beta \log \frac{\pi_\theta(y_l | x)}{\pi_{\text{ref}}(y_l | x)}\right)$$
+$$\mathcal{L}_{\text{DPO}} = -\log \sigma\left(\beta \log \frac{\pi_\theta(y_w \mid x)}{\pi_{\text{ref}}(y_w \mid x)} - \beta \log \frac{\pi_\theta(y_l \mid x)}{\pi_{\text{ref}}(y_l \mid x)}\right)$$
 
 **DPO is simpler:** No reward model, no RL loop, no PPO hyperparameters -- just
 a supervised loss on preference pairs. DPO and its variants (IPO, KTO, ORPO)

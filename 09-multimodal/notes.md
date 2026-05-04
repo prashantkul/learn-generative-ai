@@ -108,7 +108,7 @@ CLIP uses two separate encoders:
 
 Both vectors are L2-normalized to live on the unit hypersphere, so their dot product equals cosine similarity:
 
-$$\text{sim}(x, t) = \frac{f_I(x) \cdot f_T(t)}{||f_I(x)|| \cdot ||f_T(t)||} = \mathbf{v}_I \cdot \mathbf{v}_T$$
+$$\text{sim}(x, t) = \frac{f_I(x) \cdot f_T(t)}{\lVert f_I(x) \rVert \cdot \lVert f_T(t) \rVert} = \mathbf{v}_I \cdot \mathbf{v}_T$$
 
 ### Contrastive Loss: InfoNCE
 
