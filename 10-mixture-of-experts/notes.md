@@ -162,7 +162,7 @@ representation and produces a probability distribution over the $N$ experts:
 $$g(x) = \text{Softmax}(W_g \cdot x)$$
 
 where $W_g \in \mathbb{R}^{N \times d_{\text{model}}}$ is the gating weight matrix. The
-output $g(x) \in \mathbb{R}^N$ gives the probability (or affinity) for each expert.
+output $g(x) \in \mathbb{R}^{N}$ gives the probability (or affinity) for each expert.
 
 Top-$k$ selection then picks the $k$ experts with the highest gate values. The final output
 is a weighted combination of the selected experts' outputs:
@@ -498,7 +498,7 @@ GShard was one of the first demonstrations of MoE at massive scale. Key contribu
 Switch Transformer made a radical simplification: use **top-1 routing** instead of top-2.
 Each token goes to exactly one expert.
 
-$$\text{MoE}(x) = g_{i^*}(x) \cdot \text{Expert}_{i^*}(x), \quad i^* = \arg\max_i g_i(x)$$
+$$\text{MoE}(x) = g_{i^{*}}(x) \cdot \text{Expert}_{i^{*}}(x), \quad i^{*} = \arg\max_i g_i(x)$$
 
 This halves the compute cost compared to top-2 and simplifies the implementation. Despite
 the apparent loss of information (no weighted combination of experts), Switch Transformer
@@ -570,9 +570,9 @@ graph LR
         ST["Token"]:::tokenNode
         SR["Router (top-1)"]:::switchStyle
         SE1["Expert"]:::switchStyle
-        SE2["--"]:::outputNode
-        SE3["--"]:::outputNode
-        SE4["--"]:::outputNode
+        SE2["idle"]:::outputNode
+        SE3["idle"]:::outputNode
+        SE4["idle"]:::outputNode
         SO["Output = g * E(x)"]:::outputNode
         ST --> SR
         SR -->|"100%"| SE1
@@ -588,8 +588,8 @@ graph LR
         MR["Router (top-2)"]:::mixtralStyle
         ME1["Expert A"]:::mixtralStyle
         ME2["Expert B"]:::mixtralStyle
-        ME3["--"]:::outputNode
-        ME4["--"]:::outputNode
+        ME3["idle"]:::outputNode
+        ME4["idle"]:::outputNode
         MO["Output = g_a*A(x) + g_b*B(x)"]:::outputNode
         MT --> MR
         MR -->|"g_a"| ME1
